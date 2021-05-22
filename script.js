@@ -20,27 +20,27 @@ const TransactionDataAll = [
 
 // Add transactions to DOM list
 function addTransactionDOM(transaction) {
-  const deposit_item = document.createElement('li');
+const deposit_item = document.createElement('li');
 
-  deposit_item.classList.add('plus');
-  deposit_item.innerHTML = `
-  ${transaction.customername}-${transaction.bank}  <span> $ ${Math.abs(
-    transaction.deposit  
-  )}</span> 
-  `;
+deposit_item.classList.add('plus');
+deposit_item.innerHTML = `
+${transaction.customername}-${transaction.bank}  <span> $ ${
+  transaction.deposit - transaction.loan   
+}</span> 
+`;
 
-  list.appendChild(deposit_item);
+list.appendChild(deposit_item);
 
-  const loan_item = document.createElement('li');
+// const loan_item = document.createElement('li');
 
-  loan_item.classList.add('minus');
-  loan_item.innerHTML = `
-  ${transaction.customername}-${transaction.bank} <span> -$ ${Math.abs(
-    transaction.loan  
-  )}</span> 
-  `;
+// loan_item.classList.add('minus');
+// loan_item.innerHTML = `
+// ${transaction.customername}-${transaction.bank} <span> -$ ${Math.abs(
+//   transaction.loan  
+// )}</span> 
+// `;
 
-  list.appendChild(loan_item);
+// list.appendChild(loan_item);
 }
 
 // Update the balance, deposit and loan
